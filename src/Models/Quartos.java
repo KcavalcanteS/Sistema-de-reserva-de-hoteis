@@ -1,21 +1,13 @@
 package Models;
 
 public class Quartos {
-    public String id_quarto;
-    public int numero;
-    public String tipo;
-    public String status;
-    public float valor_diaria;
+    int id_quarto;
+    int numero;
+    String tipo;
+    boolean status;
+    float valor_diaria;
     
-    public Quartos(String id_quarto, int numero, String tipo, String status, float valor_diaria){
-        this.id_quarto = id_quarto;
-        this.numero = numero;
-        this.tipo = tipo;
-        this.status = status;
-        this.valor_diaria = valor_diaria;
-    }
-    
-    public String getId_quarto(){
+    public int getId_quarto(){
         return id_quarto;
     }
     public Integer getNumero(){
@@ -24,24 +16,24 @@ public class Quartos {
     public String getTipo(){
         return tipo;
     }
-    public String getStatus(){
+    public boolean getStatus(){
         return status;
     }
     public float getvalor_diaria(){
         return valor_diaria;
     }
     
-    public String setId_quarto(){
-        return id_quarto;
+    public void setId_quarto(int id_quarto){
+        this.id_quarto = id_quarto;
     }
-    public Integer setNumero(){
-        return numero;
+    public void setNumero(int numero){
+        this.numero = numero;
     }
-    public String setTipo(){
-        return tipo;
+    public void setTipo(String tipo){
+        this.tipo = tipo;
     }
-    public String setStatus(){
-        return status;
+    public void setStatus(boolean status){
+        this.status = status;
     }
     public float setvalor_diaria(){
         return valor_diaria;

@@ -1,20 +1,13 @@
 package Models;
 
 public class Funcionarios extends Pessoas{
-    public String id_funcionario;
-    public String cargo;
-    public String login;
-    public String senha;
+    int id_funcionario;
+    String cargo;
+    String login;
+    String senha;
     
-    public Funcionarios(String nome, String id_funcionario, String cargo, String login, String senha){
-        this.nome = nome;
-        this.id_funcionario = id_funcionario;
-        this.cargo = cargo;
-        this.login = login;
-        this.senha = senha;
-    }
-    
-    public String getId_funcionario(){
+    //getters
+    public int getId_funcionario(){
         return id_funcionario;
     }
     public String getCargo(){
@@ -27,16 +20,17 @@ public class Funcionarios extends Pessoas{
         return senha;
     }
     
-    public String setId_funcionario(){
-        return id_funcionario;
+    //setters
+    public void setId_funcionario(int id_funcionario){
+        this.id_funcionario = id_funcionario;
     }
-    public String setCargo(){
-        return cargo;
+    public void setCargo(String cargo){
+        this.cargo = cargo;
     }
-    public String setLogin(){
-        return login;
+    public void setLogin(String login){
+        this.login = login;
     }
-    public String setSenha(){
-        return senha;
+    public void setSenha(String senha){
+        this.senha = senha;
     }
 }

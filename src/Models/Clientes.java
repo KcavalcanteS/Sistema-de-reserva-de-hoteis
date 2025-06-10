@@ -1,20 +1,12 @@
 package Models;
 
 public class Clientes extends Pessoas{
-    public String id_cliente;
-    public String telefone;
-    public String email;
-    public String cpf;
+    int id_cliente;
+    String telefone;
+    String email;
     
-    public Clientes(String nome, String id_cliente,String email, String cpf, String telefone){
-        this.nome = nome;
-        this.id_cliente = id_cliente;
-        this.email = email;
-        this.cpf = cpf;
-        this.telefone = telefone;
-    }
-    
-    public String getId_cliente(){
+    //getters
+    public int getId_cliente(){
         return id_cliente;
     }
     public String getTelefone(){
@@ -23,20 +15,15 @@ public class Clientes extends Pessoas{
     public String getEmail(){
         return email;
     }
-    public String getCpf(){
-        return cpf;
-    }
     
-    public String setId_cliente(){
-        return id_cliente;
+    //setteres
+    public void setId_cliente(int id_cliente){
+        this.id_cliente = id_cliente;
     }
-    public String setTelefone(){
-        return telefone;
+    public void setTelefone(String telefone){
+        this.telefone = telefone;
     }
-    public String setEmail (){
-        return email;
-    }
-    public String setCpf (){
-        return cpf;
+    public void setEmail (String email){
+        this.email = email;
     }
 }

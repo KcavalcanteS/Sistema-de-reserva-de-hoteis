@@ -1,19 +1,13 @@
 package Models;
 
 public class Pagamentos {
-    public String id_pagamento;
-    public float valor;
-    public String data_pagamento;
-    public String metodo;
-    
-    public Pagamentos(String id_pagamento, float valor, String data_pagamento, String metodo){
-        this.id_pagamento = id_pagamento;
-        this.valor = valor;
-        this.data_pagamento = data_pagamento;
-        this.metodo = metodo;
-    }
-    
-    public String getId_pagamento(){
+    int id_pagamento;
+    float valor;
+    String data_pagamento;
+    String metodo;
+   
+    //getters
+    public int getId_pagamento(){
         return id_pagamento;
     }
     public float getValor(){
@@ -26,16 +20,17 @@ public class Pagamentos {
         return metodo;
     }
     
-    public String setId_pagamento(){
-        return id_pagamento;
+    //setters
+    public void setId_pagamento(int id_pagamento){
+        this.id_pagamento = id_pagamento;
     }
-    public float setValor(){
-        return valor;
+    public void setValor(float valor){
+        this.valor = valor;
     }
-    public String setData_pagamento(){
-        return data_pagamento;
+    public void setData_pagamento(String data_pagamento){
+        this.data_pagamento = data_pagamento;
     }
-    public String setMetodo(){
-        return metodo;
+    public void setMetodo(String metodo){
+        this.metodo = metodo;
     }
 }
