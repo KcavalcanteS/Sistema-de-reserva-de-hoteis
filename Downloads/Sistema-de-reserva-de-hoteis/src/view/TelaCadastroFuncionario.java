@@ -1,15 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package view;
-
-/**
- *
- * @author HP
- */
-
-
 import dao.TelaCadastroFuncionarioDAO;
 import modelo.Funcionario;
 import java.util.List;
@@ -19,7 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class TelaCadastroFuncionario extends JFrame {
-    private JTextField txtNome, txtCpf, txtTelefone, txtDataNascimento, txtRua, txtNumero, txtBairro, txtCidade, txtBuscarNome;
+    private JTextField txtNome, txtCpf, txtCargo, txtLogin, txtSenha, txtTelefone, txtDataNascimento, txtRua, txtNumero, txtBairro, txtCidade, txtBuscarNome;
     private JButton btnCadastrar, btnBuscar, btnAlterar, btnExcluir, btnSalvarAlteracoes, btnCancelar;
     private Funcionario funcionarioSelecionado;
 
@@ -78,67 +67,97 @@ public class TelaCadastroFuncionario extends JFrame {
         gbc.gridx = 1; gbc.gridy = 2;
         txtCpf = new JTextField(20);
         fieldsPanel.add(txtCpf, gbc);
-
-        // Linha 3: Telefone
+        
+        // Linha 3: Cargo
         gbc.gridx = 0; gbc.gridy = 3;
+        JLabel lblCargo = new JLabel("Cargo:");
+        lblCargo.setFont(new Font("Arial", Font.BOLD, 12));
+        fieldsPanel.add(lblCargo, gbc);
+        
+        gbc.gridx = 1; gbc.gridy = 3;
+        txtCargo = new JTextField(20);
+        fieldsPanel.add(txtCargo, gbc);
+
+        // Linha 4: Login
+        gbc.gridx = 0; gbc.gridy = 4;
+        JLabel lblLogin = new JLabel("Login:");
+        lblLogin.setFont(new Font("Arial", Font.BOLD, 12));
+        fieldsPanel.add(lblLogin, gbc);
+        
+        gbc.gridx = 1; gbc.gridy = 4;
+        txtLogin = new JTextField(20);
+        fieldsPanel.add(txtLogin, gbc);
+        
+        // Linha 5: Senha
+        gbc.gridx = 0; gbc.gridy = 5;
+        JLabel lblSenha = new JLabel("Senha:");
+        lblSenha.setFont(new Font("Arial", Font.BOLD, 12));
+        fieldsPanel.add(lblSenha, gbc);
+        
+        gbc.gridx = 1; gbc.gridy = 5;
+        txtSenha = new JTextField(20);
+        fieldsPanel.add(txtSenha, gbc);
+        
+        //linha 6: Telefone
+        gbc.gridx = 0; gbc.gridy = 6;
         JLabel lblTelefone = new JLabel("Telefone:");
         lblTelefone.setFont(new Font("Arial", Font.BOLD, 12));
         fieldsPanel.add(lblTelefone, gbc);
-
-        gbc.gridx = 1; gbc.gridy = 3;
+        
+        gbc.gridx = 1; gbc.gridy = 6;
         txtTelefone = new JTextField(20);
         fieldsPanel.add(txtTelefone, gbc);
-
-        // Linha 4: Data Nascimento
-        gbc.gridx = 0; gbc.gridy = 4;
-        JLabel lblDataNascimento = new JLabel("Data Nascimento (dd/mm/aaaa):");
+        
+        //linha 7: Data de nascimento
+        gbc.gridx = 0; gbc.gridy = 7;
+        JLabel lblDataNascimento = new JLabel("Data de nascimento (dd/MM/yyyy):");
         lblDataNascimento.setFont(new Font("Arial", Font.BOLD, 12));
         fieldsPanel.add(lblDataNascimento, gbc);
-
-        gbc.gridx = 1; gbc.gridy = 4;
+        
+        gbc.gridx = 1; gbc.gridy = 7;
         txtDataNascimento = new JTextField(20);
         fieldsPanel.add(txtDataNascimento, gbc);
-
-        // Linha 5: Rua
-        gbc.gridx = 0; gbc.gridy = 5;
+        
+        //linha 8: Rua
+        gbc.gridx = 0; gbc.gridy = 8;
         JLabel lblRua = new JLabel("Rua:");
         lblRua.setFont(new Font("Arial", Font.BOLD, 12));
         fieldsPanel.add(lblRua, gbc);
-
-        gbc.gridx = 1; gbc.gridy = 5;
+        
+        gbc.gridx = 1; gbc.gridy = 8;
         txtRua = new JTextField(20);
         fieldsPanel.add(txtRua, gbc);
-
-        // Linha 6: Número
-        gbc.gridx = 0; gbc.gridy = 6;
+        
+        // Linha 9: Número
+        gbc.gridx = 0; gbc.gridy = 9;
         JLabel lblNumero = new JLabel("Número:");
         lblNumero.setFont(new Font("Arial", Font.BOLD, 12));
         fieldsPanel.add(lblNumero, gbc);
 
-        gbc.gridx = 1; gbc.gridy = 6;
+        gbc.gridx = 1; gbc.gridy = 9;
         txtNumero = new JTextField(20);
         fieldsPanel.add(txtNumero, gbc);
-
-        // Linha 7: Bairro
-        gbc.gridx = 0; gbc.gridy = 7;
+        
+        // Linha 10: Bairro
+        gbc.gridx = 0; gbc.gridy = 10;
         JLabel lblBairro = new JLabel("Bairro:");
         lblBairro.setFont(new Font("Arial", Font.BOLD, 12));
         fieldsPanel.add(lblBairro, gbc);
 
-        gbc.gridx = 1; gbc.gridy = 7;
+        gbc.gridx = 1; gbc.gridy = 10;
         txtBairro = new JTextField(20);
         fieldsPanel.add(txtBairro, gbc);
 
-        // Linha 8: Cidade
-        gbc.gridx = 0; gbc.gridy = 8;
+        // Linha 11: Cidade
+        gbc.gridx = 0; gbc.gridy = 11;
         JLabel lblCidade = new JLabel("Cidade:");
         lblCidade.setFont(new Font("Arial", Font.BOLD, 12));
         fieldsPanel.add(lblCidade, gbc);
 
-        gbc.gridx = 1; gbc.gridy = 8;
+        gbc.gridx = 1; gbc.gridy = 11;
         txtCidade = new JTextField(20);
         fieldsPanel.add(txtCidade, gbc);
-
+        
         gbc.gridx = 0; gbc.gridy = 0;
         mainPanel.add(fieldsPanel, BorderLayout.CENTER);
 
@@ -214,6 +233,9 @@ public class TelaCadastroFuncionario extends JFrame {
         try {
             String nome = txtNome.getText().trim();
             String cpf = txtCpf.getText().trim();
+            String cargo = txtCargo.getText().trim();
+            String login = txtLogin.getText().trim();
+            String senha = txtSenha.getText().trim();
             String telefone = txtTelefone.getText().trim();
             String dataNascimento = txtDataNascimento.getText().trim();
             String rua = txtRua.getText().trim();
@@ -226,7 +248,7 @@ public class TelaCadastroFuncionario extends JFrame {
             sdfInput.setLenient(false);
             String dataNascimentoConverted = dataNascimento.isEmpty() ? "" : sdfOutput.format(sdfInput.parse(dataNascimento));
 
-            Funcionario funcionario = new Funcionario(0, nome, cpf, telefone, dataNascimentoConverted,
+            Funcionario funcionario = new Funcionario(0, nome, cpf, cargo, login, senha, telefone, dataNascimentoConverted,
                     rua, numero, bairro, cidade);
             TelaCadastroFuncionarioDAO dao = new TelaCadastroFuncionarioDAO();
             dao.adicionar(funcionario);
@@ -262,6 +284,9 @@ public class TelaCadastroFuncionario extends JFrame {
         if (funcionarioSelecionado != null) {
             txtNome.setText(funcionarioSelecionado.getNome());
             txtCpf.setText(funcionarioSelecionado.getCpf());
+            txtCargo.setText(funcionarioSelecionado.getCargo());
+            txtLogin.setText(funcionarioSelecionado.getLogin());
+            txtSenha.setText(funcionarioSelecionado.getSenha());
             txtTelefone.setText(funcionarioSelecionado.getTelefone());
             txtDataNascimento.setText(formatarData(funcionarioSelecionado.getData_nascimento()));
             txtRua.setText(funcionarioSelecionado.getRua());
@@ -298,6 +323,9 @@ public class TelaCadastroFuncionario extends JFrame {
         try {
             String nome = txtNome.getText().trim();
             String cpf = txtCpf.getText().trim();
+            String cargo = txtCargo.getText().trim();
+            String login = txtLogin.getText().trim();
+            String senha = txtSenha.getText().trim();
             String telefone = txtTelefone.getText().trim();
             String dataNascimento = txtDataNascimento.getText().trim();
             String rua = txtRua.getText().trim();
@@ -309,9 +337,12 @@ public class TelaCadastroFuncionario extends JFrame {
             SimpleDateFormat sdfOutput = new SimpleDateFormat("yyyy-MM-dd");
             sdfInput.setLenient(false);
             String dataNascimentoConverted = dataNascimento.isEmpty() ? "" : sdfOutput.format(sdfInput.parse(dataNascimento));
-
+            System.out.println(dataNascimento);
             funcionarioSelecionado.setNome(nome);
             funcionarioSelecionado.setCpf(cpf);
+            funcionarioSelecionado.setCargo(cargo);
+            funcionarioSelecionado.setLogin(login);
+            funcionarioSelecionado.setSenha(senha);
             funcionarioSelecionado.setTelefone(telefone);
             funcionarioSelecionado.setData_nascimento(dataNascimentoConverted);
             funcionarioSelecionado.setRua(rua);
@@ -360,6 +391,9 @@ public class TelaCadastroFuncionario extends JFrame {
     private void limparCampos() {
         txtNome.setText("");
         txtCpf.setText("");
+        txtCargo.setText("");
+        txtLogin.setText("");
+        txtSenha.setText("");
         txtTelefone.setText("");
         txtDataNascimento.setText("");
         txtRua.setText("");
